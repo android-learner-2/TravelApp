@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">TRAVEL</string>
-
     <string name="lbl_rating_fragment">Rating Fragment</string>
     <string name="lbl_search_fragment">Search Fragment</string>
     <string name="lbl_favorite_fragment">Favorite Fragment</string>
     <string name="lbl_price_fragment">Price Fragment</string>
     <string name="lbl_home_fragment">Home Fragment</string>
+    <string name="lbl_tour_title">Find the best tour</string>
+    <string name="lbl_empty">There is no avaliable Tours yet</string>
 </resources>
