@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.padcmyanmar.padcx.travelapp.R
-import com.padcmyanmar.padcx.travelapp.adapters.ViewPagerAdapter
+import com.padcmyanmar.padcx.travelapp.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -15,9 +15,9 @@ class MainActivity : BaseActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val pagerAdapter = ViewPagerAdapter(this)
-        viewPager.adapter = pagerAdapter
-        viewPager.currentItem = 0
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.flContainer,HomeFragment.newInstance("a","b"))
+            .commit()
 
         bottomNavigation.setOnNavigationItemSelectedListener(
             object : BottomNavigationView.OnNavigationItemSelectedListener{
@@ -25,23 +25,33 @@ class MainActivity : BaseActivity() {
                 override fun onNavigationItemSelected(item: MenuItem): Boolean {
                     when(item.itemId){
                         R.id.action_home -> {
-                            viewPager.currentItem = 0
+                            supportFragmentManager.beginTransaction()
+                                .replace(R.id.flContainer,HomeFragment.newInstance("a","b"))
+                                .commit()
                             return true
                         }
                         R.id.action_rating -> {
-                            viewPager.currentItem = 1
+                            supportFragmentManager.beginTransaction()
+                                .replace(R.id.flContainer,RatingFragment.newInstance("a","b"))
+                                .commit()
                             return true
                         }
                         R.id.action_favoirte -> {
-                            viewPager.currentItem = 2
+                            supportFragmentManager.beginTransaction()
+                                .replace(R.id.flContainer,FavoriteFragment.newInstance("a","b"))
+                                .commit()
                             return true
                         }
                         R.id.action_price -> {
-                            viewPager.currentItem = 3
+                            supportFragmentManager.beginTransaction()
+                                .replace(R.id.flContainer,PriceFragment.newInstance("a","b"))
+                                .commit()
                             return true
                         }
                         R.id.action_search -> {
-                            viewPager.currentItem = 4
+                            supportFragmentManager.beginTransaction()
+                                .replace(R.id.flContainer,SearchFragment.newInstance("a","b"))
+                                .commit()
                             return true
                         }
                     }

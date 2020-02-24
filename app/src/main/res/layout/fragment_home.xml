@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeRefreshLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/lbl_home_fragment"
-        android:gravity="center"/>
+        android:layout_marginTop="@dimen/margin_medium_3">
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_tour_title"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_heading_1x"/>
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_below="@id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:text="Country"
+                android:textSize="@dimen/text_regular_3x"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCountry"
+                android:layout_below="@id/tvSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_country"/>
+
+            <TextView
+                android:id="@+id/tvTourstitle"
+                android:layout_below="@id/rvCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:text="Popular Tours"
+                android:textSize="@dimen/text_regular_3x"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTour"
+                android:layout_below="@id/tvTourstitle"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_tours"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/vpEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/empty_view_pod"/>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

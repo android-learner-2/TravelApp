@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="100dp"
+    app:cardCornerRadius="25dp"
+    android:layout_margin="@dimen/margin_large"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/ibIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:src="@drawable/ic_weekend_black_24dp"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_toRightOf="@id/ibIcon"
+            android:text="Hotel Out"
+            android:textSize="@dimen/text_regular_2x"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_below="@id/tvName"
+            android:layout_toRightOf="@id/ibIcon"
+            android:text="8.0"
+            android:textSize="@dimen/text_smaller"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvMaxScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_below="@id/tvName"
+            android:layout_toRightOf="@id/ibIcon"
+            android:text="10"
+            android:textSize="@dimen/text_smaller"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_below="@id/ibIcon"
+            android:text="Based on 10 Reviews"
+            android:textSize="@dimen/text_smaller"/>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

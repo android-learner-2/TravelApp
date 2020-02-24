@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   app:cardCornerRadius="30dp">
+
+    <ImageView
+        android:id="@+id/ivTourPhoto"
+        android:layout_width="110dp"
+        android:layout_height="130dp"
+        android:src="@drawable/h4"
+        android:scaleType="centerCrop"
+        android:clickable="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="120dp"
+            android:weightSum="5">
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:lineSpacingMultiplier="1.3"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textStyle="bold"
+                android:text="Gunung Sahari Raya No.1 Rukan Mangga Dua Square Blok A No. 10, 14420 Jakarta"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_weight="1"
+                android:text="10 nights for two Inclusive"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="$252.20"/>
+
+        </LinearLayout>
+
+ <!--       <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_star_white_24dp"
+                android:text="4.3"/>
+
+        </LinearLayout>-->
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
