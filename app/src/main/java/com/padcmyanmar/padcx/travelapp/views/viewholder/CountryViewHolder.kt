@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.item_country.view.*
  * on 2/20/2020.
  */
 class CountryViewHolder(itemView: View,delegate: ToursItemDelegate) : BaseTravelViewHolder(itemView) {
+
     init{
         itemView.setOnClickListener {
             Log.d("M data is ",mData.toString())

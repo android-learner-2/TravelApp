@@ -81,36 +81,39 @@ class HomeFragment : Fragment(), ToursItemDelegate{
 
     @SuppressLint("CheckResult")
     private fun requestData(){
-       swipeRefreshLayout.isRefreshing = true
-        mToursModel.getAllTours(onError = {
-               swipeRefreshLayout.isRefreshing = false
-           }).observeOn(AndroidSchedulers.mainThread())
-               .subscribe({
-               swipeRefreshLayout.isRefreshing = false
-               if(it.countries.isNotEmpty() && it.tours.isNotEmpty()){
-                   countryAdapter.setNewData(it.countries.toMutableList())
-                   tourAdapter.setNewData(it.tours.toMutableList())
-               }else{
-                   Log.d("Something wrong","Array List is empty")
-               }
-           },{
-               swipeRefreshLayout.isRefreshing = false
-               Log.d("Country Error",it.localizedMessage)
-           })
-               .addTo(compositeDisposable)
+        /*  swipeRefreshLayout.isRefreshing = true
+         mToursModel.getAllTours(onError = {
+                 swipeRefreshLayout.isRefreshing = false
+             }).observeOn(AndroidSchedulers.mainThread())
+                 .subscribe({
+                 swipeRefreshLayout.isRefreshing = false
+                 if(it.countries.isNotEmpty() && it.tours.isNotEmpty()){
+                     countryAdapter.setNewData(it.countries.toMutableList())
+                     tourAdapter.setNewData(it.tours.toMutableList())
+                 }else{
+                     Log.d("Something wrong","Array List is empty")
+                 }
+             },{
+                 swipeRefreshLayout.isRefreshing = false
+                 Log.d("Country Error",it.localizedMessage)
+             })
+                 .addTo(compositeDisposable)*/
 
         // data take from database
-         /*mToursModel.getAllToursOffline()
+        swipeRefreshLayout.isRefreshing = true
+         mToursModel.getAllToursOffline()
              .observe(this,
                  Observer {
+                     swipeRefreshLayout.isRefreshing = false
                      tourAdapter.setNewData(it.toMutableList())
                  })
 
         mToursModel.getAllCountriesOffline()
             .observe(this,
                 Observer {
+                    swipeRefreshLayout.isRefreshing = false
                     countryAdapter.setNewData(it.toMutableList())
-                })*/
+                })
 }
 
     private fun setupRecyclerView(){

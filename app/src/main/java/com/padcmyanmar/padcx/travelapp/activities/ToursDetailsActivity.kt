@@ -33,7 +33,7 @@ class ToursDetailsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        setContentView(R.layout.activity_tours_details)
 
         setupRecyclerView()
         toursName = intent.getStringExtra(IE_TOURS_NAME)
@@ -59,13 +59,13 @@ class ToursDetailsActivity : BaseActivity() {
                 Observer {
                     tvName.text = it.name
                     tvDescription.text = it.description
-                    //tvDetailsLocation.text = it.location
+                    tvDetailsLocation.text = it.location
                     photoAdapter.setNewData(it.photos)
                     scoresReviewsAdapter.setNewData(it.scoresAndReviews)
 
-                    /*Glide.with(this)
+                    Glide.with(this)
                         .load(it.photos[0])
-                        .into(ivPhotosDetail)*/
+                        .into(ivPhotosDetail)
             })
     }
 }
